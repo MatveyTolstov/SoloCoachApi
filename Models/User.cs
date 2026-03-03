@@ -32,5 +32,10 @@ namespace SoloCoachApi.Models
         [Column("role_id")]
         public int RoleId { get; set; }
         public virtual Role? Role { get; set; }
+
+        [ForeignKey(nameof(UserProfileId))]
+        [Column("user_profile_id")]
+        public int UserProfileId { get; set; }
+        public virtual UserProfile? UserProfile { get; set; }
     }
 }

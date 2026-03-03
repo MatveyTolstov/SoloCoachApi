@@ -26,11 +26,15 @@ namespace SoloCoachApi.Models
         public required string Gender { get; set; }
 
         [Column("goal")]
-        public required string Goal {get; set;}
+        [MaxLength(10)]
+        public string? Goal { get; set; }
 
-        [ForeignKey(nameof(RoleId))]
-        [Column("role_id")]
-        public int RoleId { get; set; }
-        public virtual Role? Role { get; set; }
+        [Column("experience_level")]
+        [MaxLength(12)]
+        public string? ExperienceLevel{ get; set; }
+
+        [Column("activity_level")]
+        [MaxLength(8)]
+        public string? ActivityLevel{ get; set; }
     }
 }
