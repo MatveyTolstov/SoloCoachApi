@@ -26,13 +26,11 @@ namespace SoloCoachApi.Models
         [Column("email")]
         [EmailAddress]
         [MaxLength(100)]
-        [Required]
-        public string Email { get; set; } = null!;
+        public required string Email { get; set; }
 
-        [ForeignKey("role_id")]
+        [ForeignKey(nameof(RoleId))]
         [Column("role_id")]
-        [Required]
         public int RoleId { get; set; }
-        public virtual Role Role { get; set; }
+        public virtual Role? Role { get; set; }
     }
 }
